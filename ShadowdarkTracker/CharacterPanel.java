@@ -14,6 +14,7 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
    private JButton clearB;
    private JTextField nameF;
    private JTextField luckPointsF;
+   private JTextField initF;
    private JButton addFPB;
    private JButton removeFPB;
    private JCheckBox hasActedCB;
@@ -31,6 +32,8 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
       luckPointsF.setEditable(false);
       addFPB = new JButton("+");
       removeFPB = new JButton("-");
+      initF = new JTextField("");
+      add(initF);
       hasActedCB = new JCheckBox();
       hasActedCB.setHorizontalAlignment(JTextField.CENTER);
       parent = rowPanel;
@@ -85,6 +88,7 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
    {
       luckPoints = 0;
       nameF.setText("");
+      initF.setText("");
       newRound();
       arrangeElements();
    }
@@ -130,12 +134,19 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
    public void arrangeElements()
    {
       updateFatePointsField();
-      double nameFWidth = 1.0 - ((SMALL_ELEMENT_WIDTH + MEDIUM_ELEMENT_WIDTH) * 2);
+      double xInset = 0.0;
+      double nameFWidth = 1.0 - ((SMALL_ELEMENT_WIDTH + MEDIUM_ELEMENT_WIDTH) * 2) - MEDIUM_ELEMENT_WIDTH;
       arrangeElement(clearB,        0.0, 0.0, SMALL_ELEMENT_WIDTH, 1.0);
-      arrangeElement(nameF,         SMALL_ELEMENT_WIDTH, 0.0, nameFWidth, 1.0);
-      arrangeElement(luckPointsF,   SMALL_ELEMENT_WIDTH + nameFWidth, 0, MEDIUM_ELEMENT_WIDTH, 1.0);
-      arrangeElement(addFPB,        1.0 - (MEDIUM_ELEMENT_WIDTH + SMALL_ELEMENT_WIDTH), 0.0, SMALL_ELEMENT_WIDTH, .5);
-      arrangeElement(removeFPB,     1.0 - (MEDIUM_ELEMENT_WIDTH + SMALL_ELEMENT_WIDTH), .5, SMALL_ELEMENT_WIDTH, .5);
-      arrangeElement(hasActedCB,    1.0 - MEDIUM_ELEMENT_WIDTH, 0.0, MEDIUM_ELEMENT_WIDTH, 1.0);
+      xInset += SMALL_ELEMENT_WIDTH;
+      arrangeElement(nameF,         xInset, 0.0, nameFWidth, 1.0);
+      xInset += nameFWidth;
+      arrangeElement(luckPointsF,   xInset, 0, MEDIUM_ELEMENT_WIDTH, 1.0);
+      xInset += MEDIUM_ELEMENT_WIDTH;
+      arrangeElement(addFPB,        xInset, 0.0, SMALL_ELEMENT_WIDTH, .5);
+      arrangeElement(removeFPB,     xInset, .5, SMALL_ELEMENT_WIDTH, .5);
+      xInset += SMALL_ELEMENT_WIDTH;
+      arrangeElement(initF,   xInset, 0, MEDIUM_ELEMENT_WIDTH, 1.0);
+      xInset += MEDIUM_ELEMENT_WIDTH;
+      arrangeElement(hasActedCB,    xInset, 0.0, MEDIUM_ELEMENT_WIDTH, 1.0);
    }
 }

@@ -16,7 +16,7 @@ public class SDTFrame extends JFrame implements ActionListener
    public SDTFrame()
    {
       super();
-      setSize(800, 500);
+      setSize(1200, 800);
       setTitle("ShadowdarkTracker");
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       
