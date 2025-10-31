@@ -15,7 +15,7 @@ public class RowTitlePanel extends SDTPanel
       super();
       characterTitlePanel = new CharacterTitlePanel();
       add(characterTitlePanel);
-      conditionL = new JLabel("Conditions, Notes, Etc.");
+      conditionL = new JLabel("Conditions, Notes, Etc.", SwingConstants.CENTER);
       add(conditionL);
    }
    
@@ -30,9 +30,9 @@ public class RowTitlePanel extends SDTPanel
    {
       int pixelSize = Math.min(c.getWidth(), c.getHeight());
       if(c instanceof JButton)
-         pixelSize = (int)(pixelSize * BUTTON_FONT_SCALE);
+         pixelSize = (int)(pixelSize * (BUTTON_FONT_SCALE * .75));
       else
-         pixelSize = (int)(pixelSize * (TEXT_FONT_SCALE / 2));
+         pixelSize = (int)(pixelSize * (TEXT_FONT_SCALE * .75));
       return pixelSize;
    }
 }

@@ -17,13 +17,13 @@ public class CharacterTitlePanel extends SDTPanel
    public CharacterTitlePanel()
    {
       super();
-      nameL = new JLabel("Name");
+      nameL = new JLabel("Name", SwingConstants.CENTER);
       add(nameL);
-      luckL = new JLabel("Luck");
+      luckL = new JLabel("Luck", SwingConstants.CENTER);
       add(luckL);
-      initL = new JLabel("Init");
+      initL = new JLabel("Init", SwingConstants.CENTER);
       add(initL);
-      actedL = new JLabel("Acted");
+      actedL = new JLabel("Acted", SwingConstants.CENTER);
       add(actedL);
       
       arrangeElements();
@@ -42,5 +42,16 @@ public class CharacterTitlePanel extends SDTPanel
       arrangeElement(initL,         xInset, 0, MEDIUM_ELEMENT_WIDTH, 1.0);
       xInset += MEDIUM_ELEMENT_WIDTH;
       arrangeElement(actedL,        xInset, 0.0, MEDIUM_ELEMENT_WIDTH, 1.0);
+   }
+   
+   @Override
+   public int calcFontSize(JComponent c)
+   {
+      int pixelSize = Math.min(c.getWidth(), c.getHeight());
+      if(c instanceof JButton)
+         pixelSize = (int)(pixelSize * (BUTTON_FONT_SCALE * .75));
+      else
+         pixelSize = (int)(pixelSize * (TEXT_FONT_SCALE * .75));
+      return pixelSize;
    }
 }
