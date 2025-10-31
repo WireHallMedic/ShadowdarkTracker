@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class SDTFrame extends JFrame implements ActionListener
 {
    private TimerPanel timerPanel;
-   private SDTPanel[] characterPanel;
+   private CharacterPanel[] characterPanel;
    private SDTPanel controlPanel;
    private javax.swing.Timer timer;
    
@@ -26,6 +26,13 @@ public class SDTFrame extends JFrame implements ActionListener
       setLayout(new GridLayout(CHARACTER_PANELS + 2, 1));
       timerPanel = new TimerPanel(timer);
       add(timerPanel);
+      
+      characterPanel = new CharacterPanel[CHARACTER_PANELS];
+      for(CharacterPanel curPanel : characterPanel)
+      {
+         curPanel = new CharacterPanel();
+         add(curPanel);
+      }
       
       
       setVisible(true);
