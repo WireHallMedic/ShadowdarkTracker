@@ -14,7 +14,7 @@ public class CharacterTitlePanel extends SDTPanel
    private JLabel initL;
    private JLabel actedL;
    
-   public CharacterTitlePanel(RowPanel rowPanel)
+   public CharacterTitlePanel()
    {
       super();
       nameL = new JLabel("Name");

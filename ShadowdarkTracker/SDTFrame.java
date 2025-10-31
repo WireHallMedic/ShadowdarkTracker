@@ -26,6 +26,7 @@ public class SDTFrame extends JFrame implements ActionListener
       timerPanel = new TimerPanel(timer);
       add(timerPanel);
       
+      add(new RowTitlePanel());
       
       rowPanel = new RowPanel[CHARACTER_PANELS];
       for(RowPanel curPanel : rowPanel)
