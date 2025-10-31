@@ -71,7 +71,7 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
       }
       if(ae.getSource() == clearB)
       {
-         clear();
+         parent.clearAll();
       }
       arrangeElements();
    }

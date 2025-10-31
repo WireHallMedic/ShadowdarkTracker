@@ -22,9 +22,10 @@ public class SDTFrame extends JFrame implements ActionListener
       
       timer = new javax.swing.Timer(1000, null);
       
-      setLayout(new GridLayout(CHARACTER_PANELS + 2, 1));
+      setLayout(new GridLayout(CHARACTER_PANELS + 3, 1));
       timerPanel = new TimerPanel(timer);
       add(timerPanel);
+      
       
       rowPanel = new RowPanel[CHARACTER_PANELS];
       for(RowPanel curPanel : rowPanel)
