@@ -9,6 +9,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
 	private int curTime;
 	private int maxTime;
 	private boolean runF;
+   private JPanel bgPanel;
 	private JTextField timeF;
 	private JButton runB;
 	private JButton resetB;
@@ -35,7 +36,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
 
    public TimerPanel(javax.swing.Timer t)
    {
-      maxTime = 30;//60*60;
+      maxTime = 60*60;
       runF = false;
       timeF = new JTextField("");
       timeF.setHorizontalAlignment(SwingConstants.CENTER);
@@ -46,6 +47,8 @@ public class TimerPanel extends SDTPanel implements ActionListener
       runB.addActionListener(this);
       add(resetB);
       resetB.addActionListener(this);
+      bgPanel = new JPanel(); // needs to be last
+      add(bgPanel);
       arrangeElements();
       timer = t;
       timer.addActionListener(this);
@@ -90,7 +93,8 @@ public class TimerPanel extends SDTPanel implements ActionListener
    public void displayTime()
    {
       timeF.setText(getTimeString());
-      this.setBackground(getLightColor());
+      bgPanel.setBackground(getLightColor());
+      this.repaint();
    }
    
    public Color getLightColor()
@@ -116,6 +120,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
       arrangeElement(timeF, .15, 0.1, .2, .8);
       arrangeElement(runB, .4, 0.1, .2, .8);
       arrangeElement(resetB, .65, 0.1, .2, .8);
+      arrangeElement(bgPanel, 0.0, 0.0, 1.0, 1.0);
    }
    
    public String getTimeString()
