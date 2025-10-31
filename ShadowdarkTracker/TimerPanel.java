@@ -13,6 +13,9 @@ public class TimerPanel extends SDTPanel implements ActionListener
 	private JButton runB;
 	private JButton resetB;
    private javax.swing.Timer timer;
+   private static final int BASE_RED = 0xFF;
+   private static final int BASE_GREEN = 0xD7;
+   private static final int BASE_BLUE = 0x00;
 
 
 	public int getCurTime(){return curTime;}
@@ -32,9 +35,10 @@ public class TimerPanel extends SDTPanel implements ActionListener
 
    public TimerPanel(javax.swing.Timer t)
    {
-      maxTime = 60*60;
+      maxTime = 30;//60*60;
       runF = false;
       timeF = new JTextField("");
+      timeF.setHorizontalAlignment(SwingConstants.CENTER);
       runB = new JButton("Start");
       resetB = new JButton("Reset");
       add(timeF);
@@ -77,6 +81,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
       if(ae.getSource() == resetB)
       {
          resetTime();
+         displayTime();
       }
       if(runF)
          displayTime();
@@ -85,13 +90,32 @@ public class TimerPanel extends SDTPanel implements ActionListener
    public void displayTime()
    {
       timeF.setText(getTimeString());
+      this.setBackground(getLightColor());
+   }
+   
+   public Color getLightColor()
+   {
+      double intensity = 0.0;
+      // use the first quarter of cosine to stay light longer
+      if(curTime > 0)
+      {
+         intensity = 1.0 - ((double)curTime / (double)maxTime);
+         intensity = Math.cos(intensity * Math.PI / 2.0);
+         // shut off the lights at the end, smooth is dark too soon
+         if(curTime > 0)
+            intensity = Math.min(1.0, intensity + .25);
+      }
+      int r = (int)(BASE_RED * intensity);
+      int g = (int)(BASE_GREEN * intensity);
+      int b = (int)(BASE_BLUE * intensity);
+      return new Color(r, g, b);
    }
    
    public void arrangeElements()
    {
-      arrangeElement(timeF, .125, 0.0, .25, 1.0);
-      arrangeElement(runB, .35, 0.0, .25, 1.0);
-      arrangeElement(resetB, .60, 0.0, .25, 1.0);
+      arrangeElement(timeF, .15, 0.1, .2, .8);
+      arrangeElement(runB, .4, 0.1, .2, .8);
+      arrangeElement(resetB, .65, 0.1, .2, .8);
    }
    
    public String getTimeString()
