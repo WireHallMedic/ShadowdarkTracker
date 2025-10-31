@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class SDTFrame extends JFrame implements ActionListener
 {
    private TimerPanel timerPanel;
-   private CharacterPanel[] characterPanel;
+   private SDTPanel[] characterPanel;
    private SDTPanel controlPanel;
    private javax.swing.Timer timer;
    
