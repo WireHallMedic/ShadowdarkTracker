@@ -8,7 +8,6 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
 {
    public static final double SMALL_ELEMENT_WIDTH = .05;
    public static final double MEDIUM_ELEMENT_WIDTH = SMALL_ELEMENT_WIDTH * 2;
-   public static final int MAX_CHECK_BOXES = 10;
    public static final Insets BUTTON_MARGINS = new Insets(1, 1, 1, 1);
    
    private JButton clearB;
@@ -135,7 +134,7 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
    {
       updateFatePointsField();
       double xInset = 0.0;
-      double nameFWidth = 1.0 - ((SMALL_ELEMENT_WIDTH + MEDIUM_ELEMENT_WIDTH) * 2) - MEDIUM_ELEMENT_WIDTH;
+      double nameFWidth = 1.0 - ((SMALL_ELEMENT_WIDTH * 2) + (MEDIUM_ELEMENT_WIDTH * 3));
       arrangeElement(clearB,        0.0, 0.0, SMALL_ELEMENT_WIDTH, 1.0);
       xInset += SMALL_ELEMENT_WIDTH;
       arrangeElement(nameF,         xInset, 0.0, nameFWidth, 1.0);
