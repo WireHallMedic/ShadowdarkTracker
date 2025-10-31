@@ -67,7 +67,10 @@ public class TimerPanel extends SDTPanel implements ActionListener
       {
          runF = !runF;
          if(runF)
+         {
+            curTime = getTimeInt();
             runB.setText("Pause");
+         }
          else
             runB.setText("Start");
       }
@@ -75,7 +78,8 @@ public class TimerPanel extends SDTPanel implements ActionListener
       {
          resetTime();
       }
-      displayTime();
+      if(runF)
+         displayTime();
    }
    
    public void displayTime()
@@ -95,5 +99,17 @@ public class TimerPanel extends SDTPanel implements ActionListener
       int min = curTime / 60;
       int sec = curTime % 60;
       return String.format("%d:%02d", min, sec);
+   }
+   
+   public int getTimeInt()
+   {
+      try
+      {
+         int min = Integer.parseInt(timeF.getText().split(":")[0]);
+         int sec = Integer.parseInt(timeF.getText().split(":")[1]);
+         return (min * 60) + sec;
+      }
+      catch(Exception ex){}
+      return maxTime;
    }
 }
