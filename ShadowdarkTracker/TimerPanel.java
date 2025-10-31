@@ -89,9 +89,9 @@ public class TimerPanel extends SDTPanel implements ActionListener
    
    public void arrangeElements()
    {
-      arrangeElement(timeF, .25, 0.0, .25, 1.0);
-      arrangeElement(runB, .5, 0.0, .25, 1.0);
-      arrangeElement(resetB, .75, 0.0, .25, 1.0);
+      arrangeElement(timeF, .125, 0.0, .25, 1.0);
+      arrangeElement(runB, .35, 0.0, .25, 1.0);
+      arrangeElement(resetB, .60, 0.0, .25, 1.0);
    }
    
    public String getTimeString()
