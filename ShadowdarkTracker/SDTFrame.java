@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class SDTFrame extends JFrame implements ActionListener
 {
    private TimerPanel timerPanel;
-   private SDTPanel[] characterPanel;
+   private RowPanel[] rowPanel;
    private SDTPanel controlPanel;
    private javax.swing.Timer timer;
    
@@ -21,20 +21,19 @@ public class SDTFrame extends JFrame implements ActionListener
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       
       timer = new javax.swing.Timer(1000, null);
-      timer.start();
       
       setLayout(new GridLayout(CHARACTER_PANELS + 2, 1));
       timerPanel = new TimerPanel(timer);
       add(timerPanel);
       
-      characterPanel = new CharacterPanel[CHARACTER_PANELS];
-      for(CharacterPanel curPanel : characterPanel)
+      rowPanel = new RowPanel[CHARACTER_PANELS];
+      for(RowPanel curPanel : rowPanel)
       {
-         curPanel = new CharacterPanel();
+         curPanel = new RowPanel();
          add(curPanel);
       }
       
-      
+      timer.start();
       setVisible(true);
    }
    
