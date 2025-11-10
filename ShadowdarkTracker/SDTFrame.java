@@ -11,6 +11,8 @@ public class SDTFrame extends JFrame implements ActionListener
    private SDTPanel controlPanel;
    private javax.swing.Timer timer;
    
+   //public static final Insets insets = new Insets(2, 2, 2, 2);
+   
    public static final int CHARACTER_PANELS = 13;
    
    public SDTFrame()

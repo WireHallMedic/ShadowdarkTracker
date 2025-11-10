@@ -9,22 +9,23 @@ public class CharacterTitlePanel extends SDTPanel
    public static final double SMALL_ELEMENT_WIDTH = CharacterPanel.SMALL_ELEMENT_WIDTH;
    public static final double MEDIUM_ELEMENT_WIDTH = CharacterPanel.MEDIUM_ELEMENT_WIDTH;
    
-   private JLabel nameL;
-   private JLabel luckL;
-   private JLabel initL;
-   private JLabel actedL;
+   private SDLabel nameL;
+   private SDLabel luckL;
+   private SDLabel initL;
+   private SDLabel actedL;
    
    public CharacterTitlePanel()
    {
       super();
-      nameL = new JLabel("Name", SwingConstants.CENTER);
+      nameL = new SDLabel("Name");
       add(nameL);
-      luckL = new JLabel("Luck", SwingConstants.CENTER);
+      luckL = new SDLabel("Luck");
       add(luckL);
-      initL = new JLabel("Init", SwingConstants.CENTER);
+      initL = new SDLabel("Init");
       add(initL);
-      actedL = new JLabel("Acted", SwingConstants.CENTER);
+      actedL = new SDLabel("Acted");
       add(actedL);
+      setBackground(Color.BLACK);
       
       arrangeElements();
    }

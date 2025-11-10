@@ -13,20 +13,23 @@ s#i0
 s#k0
 s#j0
 s#l0
-!327;g
+!135;u
+a0	b68	c255	f%\011ShadowdarkTracker.jar	g%\011ShadowdarkTracker.zip	hManifest-Version\0111.0\011Main-Class\011ShadowdarkTracker.SDTMain!364;g
 %\011ShadowdarkTracker%sCharacterPanel.java
 %\011ShadowdarkTracker%sCharacterTitlePanel.java
 %\011ShadowdarkTracker%sRowPanel.java
 %\011ShadowdarkTracker%sRowTitlePanel.java
+%\011ShadowdarkTracker%sSDLabel.java
 %\011ShadowdarkTracker%sSDTFrame.java
 %\011ShadowdarkTracker%sSDTMain.java
 %\011ShadowdarkTracker%sSDTPanel.java
 %\011ShadowdarkTracker%sTimerPanel.java
-!327;f
+!364;f
 %\011ShadowdarkTracker%sCharacterPanel.java
 %\011ShadowdarkTracker%sCharacterTitlePanel.java
 %\011ShadowdarkTracker%sRowPanel.java
 %\011ShadowdarkTracker%sRowTitlePanel.java
+%\011ShadowdarkTracker%sSDLabel.java
 %\011ShadowdarkTracker%sSDTFrame.java
 %\011ShadowdarkTracker%sSDTMain.java
 %\011ShadowdarkTracker%sSDTPanel.java
