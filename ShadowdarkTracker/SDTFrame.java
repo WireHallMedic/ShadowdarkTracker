@@ -8,8 +8,8 @@ public class SDTFrame extends JFrame implements ActionListener
 {
    private TimerPanel timerPanel;
    private RowPanel[] rowPanel;
-   private SDTPanel controlPanel;
    private JPanel backgroundPanel;
+   private ControlPanel controlPanel;
    private javax.swing.Timer timer;
    public static final Insets INSETS = new Insets(2, 2, 2, 2);
    
@@ -38,6 +38,9 @@ public class SDTFrame extends JFrame implements ActionListener
          rowPanel[i] = new RowPanel();
          backgroundPanel.add(rowPanel[i]);
       }
+      
+      controlPanel = new ControlPanel();
+      backgroundPanel.add(controlPanel);
       
       timer.start();
       setPanelBackgrounds(Color.WHITE);

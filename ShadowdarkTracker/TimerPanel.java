@@ -36,6 +36,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
 
    public TimerPanel(javax.swing.Timer t, SDTFrame parentF)
    {
+      super();
       parentFrame = parentF;
       maxTime = 60*60;
       runF = false;
