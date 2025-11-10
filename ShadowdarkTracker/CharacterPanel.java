@@ -62,8 +62,6 @@ public class CharacterPanel extends SDTPanel implements ActionListener, KeyListe
    public void setBackground(Color c)
    {
       super.setBackground(c);
-      if(luckPointsF != null)
-         luckPointsF.setBackground(c);
       if(hasActedCB != null)
          hasActedCB.setBackground(c);
    }

@@ -13,9 +13,9 @@ public class TimerPanel extends SDTPanel implements ActionListener
 	private JButton runB;
 	private JButton resetB;
    private javax.swing.Timer timer;
-   private static final int BASE_RED = 0xFF;
-   private static final int BASE_GREEN = 0xD7;
-   private static final int BASE_BLUE = 0x00;
+   private static final int BASE_RED = 0xFF;//0xFF;
+   private static final int BASE_GREEN = 0xFF;//0xD7;
+   private static final int BASE_BLUE = 0xFF;//0x00;
    private SDTFrame parentFrame;
 
 
@@ -37,7 +37,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
    public TimerPanel(javax.swing.Timer t, SDTFrame parentF)
    {
       parentFrame = parentF;
-      maxTime = 30;//60*60;
+      maxTime = 60*60;
       runF = false;
       timeF = new JTextField("");
       timeF.setHorizontalAlignment(SwingConstants.CENTER);
@@ -98,18 +98,15 @@ public class TimerPanel extends SDTPanel implements ActionListener
       this.repaint();
    }
    
+   // stay at 100% for first quarter, smoothly scale down to 25% over next three quarters, then drop to 0%
    public Color getLightColor()
    {
+      double timeRemaining = (double)curTime / (double)maxTime;
       double intensity = 0.0;
-      // use the first quarter of cosine to stay light longer
-      if(curTime > 0)
-      {
-         intensity = 1.0 - ((double)curTime / (double)maxTime);
-         intensity = Math.cos(intensity * Math.PI / 2.0);
-         // shut off the lights at the end, smooth is dark too soon
-         if(curTime > 0)
-            intensity = Math.min(1.0, intensity + .25);
-      }
+      if(timeRemaining >= .75)
+         intensity = 1.0;
+      else if(timeRemaining > 0.0)
+         intensity = 1.0 - (1.0 - (timeRemaining + .25));
       int r = (int)(BASE_RED * intensity);
       int g = (int)(BASE_GREEN * intensity);
       int b = (int)(BASE_BLUE * intensity);

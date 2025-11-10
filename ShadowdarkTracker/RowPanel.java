@@ -35,7 +35,6 @@ public class RowPanel extends SDTPanel
    @Override
    public void setBackground(Color c)
    {
-      System.out.println("Triggered " + Math.random());
       super.setBackground(c);
       if(characterPanel != null)
          characterPanel.setBackground(c);
