@@ -120,7 +120,7 @@ public class TimerPanel extends SoTPanel implements ActionListener
    
    public void arrangeElements()
    {
-      arrangeElement(timeF, .15, 0.1, .2, .8);
+      arrangeElement(timeF, .2, 0.1, .1, .8);
       arrangeElement(runB, .4, 0.1, .2, .8);
       arrangeElement(resetB, .65, 0.1, .2, .8);
    }
