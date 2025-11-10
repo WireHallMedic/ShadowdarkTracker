@@ -9,7 +9,6 @@ public class TimerPanel extends SDTPanel implements ActionListener
 	private int curTime;
 	private int maxTime;
 	private boolean runF;
-   private JPanel bgPanel;
 	private JTextField timeF;
 	private JButton runB;
 	private JButton resetB;
@@ -17,6 +16,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
    private static final int BASE_RED = 0xFF;
    private static final int BASE_GREEN = 0xD7;
    private static final int BASE_BLUE = 0x00;
+   private SDTFrame parentFrame;
 
 
 	public int getCurTime(){return curTime;}
@@ -34,8 +34,9 @@ public class TimerPanel extends SDTPanel implements ActionListener
 	public void setRunB(JButton r){runB = r;}
 	public void setResetB(JButton r){resetB = r;}
 
-   public TimerPanel(javax.swing.Timer t)
+   public TimerPanel(javax.swing.Timer t, SDTFrame parentF)
    {
+      parentFrame = parentF;
       maxTime = 60*60;
       runF = false;
       timeF = new JTextField("");
@@ -47,8 +48,6 @@ public class TimerPanel extends SDTPanel implements ActionListener
       runB.addActionListener(this);
       add(resetB);
       resetB.addActionListener(this);
-      bgPanel = new JPanel(); // needs to be last
-      add(bgPanel);
       arrangeElements();
       timer = t;
       timer.addActionListener(this);
@@ -93,7 +92,9 @@ public class TimerPanel extends SDTPanel implements ActionListener
    public void displayTime()
    {
       timeF.setText(getTimeString());
-      bgPanel.setBackground(getLightColor());
+      Color lightColor = getLightColor();
+      setBackground(lightColor);
+      parentFrame.setPanelBackgrounds(lightColor);
       this.repaint();
    }
    
@@ -120,7 +121,6 @@ public class TimerPanel extends SDTPanel implements ActionListener
       arrangeElement(timeF, .15, 0.1, .2, .8);
       arrangeElement(runB, .4, 0.1, .2, .8);
       arrangeElement(resetB, .65, 0.1, .2, .8);
-      arrangeElement(bgPanel, 0.0, 0.0, 1.0, 1.0);
    }
    
    public String getTimeString()

@@ -27,7 +27,7 @@ public class SDTFrame extends JFrame implements ActionListener
       backgroundPanel = new JPanel();
       add(backgroundPanel);
       backgroundPanel.setLayout(new GridLayout(CHARACTER_PANELS + 3, 1));
-      timerPanel = new TimerPanel(timer);
+      timerPanel = new TimerPanel(timer, this);
       backgroundPanel.add(timerPanel);
       
       backgroundPanel.add(new RowTitlePanel());
@@ -48,9 +48,10 @@ public class SDTFrame extends JFrame implements ActionListener
    {
       if(backgroundPanel != null)
          backgroundPanel.setBackground(c);
-      for(RowPanel curPanel : rowPanel)
-         if(curPanel != null)
-            curPanel.setBackground(c);
+      if(rowPanel != null)
+         for(RowPanel curPanel : rowPanel)
+            if(curPanel != null)
+               curPanel.setBackground(c);
    }
    
    public void actionPerformed(ActionEvent ae)
