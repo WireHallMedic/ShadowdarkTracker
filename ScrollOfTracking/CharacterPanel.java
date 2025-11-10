@@ -32,6 +32,7 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
       addFPB = new JButton("+");
       removeFPB = new JButton("-");
       initF = new JTextField("");
+      initF.setHorizontalAlignment(JTextField.CENTER);
       add(initF);
       hasActedCB = new JCheckBox();
       hasActedCB.setHorizontalAlignment(JTextField.CENTER);
