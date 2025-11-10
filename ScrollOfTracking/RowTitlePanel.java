@@ -1,13 +1,13 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class RowTitlePanel extends SDTPanel
+public class RowTitlePanel extends SoTPanel
 {
    private CharacterTitlePanel characterTitlePanel;
-   private SDLabel conditionL;
+   private SoTLabel conditionL;
    public static final double CHARACTER_PANEL_WIDTH = RowPanel.CHARACTER_PANEL_WIDTH;
    
    public RowTitlePanel()
@@ -15,7 +15,7 @@ public class RowTitlePanel extends SDTPanel
       super();
       characterTitlePanel = new CharacterTitlePanel();
       add(characterTitlePanel);
-      conditionL = new SDLabel("Conditions, Notes, Etc.");
+      conditionL = new SoTLabel("Conditions, Notes, Etc.");
       add(conditionL);
       setBackground(Color.BLACK);
    }

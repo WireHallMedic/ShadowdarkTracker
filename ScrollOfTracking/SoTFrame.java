@@ -1,9 +1,9 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class SDTFrame extends JFrame
+public class SoTFrame extends JFrame
 {
    private TimerPanel timerPanel;
    private RowPanel[] rowPanel;
@@ -14,11 +14,11 @@ public class SDTFrame extends JFrame
    
    public static final int CHARACTER_PANELS = 13;
    
-   public SDTFrame()
+   public SoTFrame()
    {
       super();
       setSize(1400, 800);
-      setTitle("SD Tracker");
+      setTitle("Scroll of Tracking");
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       
       timer = new javax.swing.Timer(1000, null);

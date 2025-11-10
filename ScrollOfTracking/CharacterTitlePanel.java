@@ -1,29 +1,29 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CharacterTitlePanel extends SDTPanel
+public class CharacterTitlePanel extends SoTPanel
 {
    public static final double SMALL_ELEMENT_WIDTH = CharacterPanel.SMALL_ELEMENT_WIDTH;
    public static final double MEDIUM_ELEMENT_WIDTH = CharacterPanel.MEDIUM_ELEMENT_WIDTH;
    
-   private SDLabel nameL;
-   private SDLabel luckL;
-   private SDLabel initL;
-   private SDLabel actedL;
+   private SoTLabel nameL;
+   private SoTLabel luckL;
+   private SoTLabel initL;
+   private SoTLabel actedL;
    
    public CharacterTitlePanel()
    {
       super();
-      nameL = new SDLabel("Name");
+      nameL = new SoTLabel("Name");
       add(nameL);
-      luckL = new SDLabel("Luck");
+      luckL = new SoTLabel("Luck");
       add(luckL);
-      initL = new SDLabel("Init");
+      initL = new SoTLabel("Init");
       add(initL);
-      actedL = new SDLabel("Acted");
+      actedL = new SoTLabel("Acted");
       add(actedL);
       setBackground(Color.BLACK);
       

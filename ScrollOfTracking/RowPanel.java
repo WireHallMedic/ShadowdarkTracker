@@ -1,10 +1,10 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class RowPanel extends SDTPanel
+public class RowPanel extends SoTPanel
 {
    private CharacterPanel characterPanel;
    private JTextField conditionF;

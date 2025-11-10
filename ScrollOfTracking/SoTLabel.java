@@ -1,14 +1,14 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class SDLabel extends JLabel
+public class SoTLabel extends JLabel
 {
-   public SDLabel(){this("", SwingConstants.CENTER);}
-   public SDLabel(String str){this(str, SwingConstants.CENTER);}
+   public SoTLabel(){this("", SwingConstants.CENTER);}
+   public SoTLabel(String str){this(str, SwingConstants.CENTER);}
    
-   SDLabel(String str, int horizAlign)
+   SoTLabel(String str, int horizAlign)
    {
       super(str, horizAlign);
       setForeground(Color.WHITE);

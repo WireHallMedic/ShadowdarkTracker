@@ -1,10 +1,10 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public abstract class SDTPanel extends JPanel implements ComponentListener
+public abstract class SoTPanel extends JPanel implements ComponentListener
 {
    public static final double SMALL_ELEMENT_WIDTH = .05;
    public static final double TEXT_FONT_SCALE = .67;
@@ -14,7 +14,7 @@ public abstract class SDTPanel extends JPanel implements ComponentListener
    
    public void setInsets(Insets i){insets = i;}
    
-   public SDTPanel()
+   public SoTPanel()
    {
       super();
       insets = new Insets(2, 2, 2, 2);

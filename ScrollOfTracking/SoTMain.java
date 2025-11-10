@@ -1,10 +1,10 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
-public class SDTMain
+public class SoTMain
 {
    
    public static void main(String[] args)
    {
-      SDTFrame frame = new SDTFrame();
+      SoTFrame frame = new SoTFrame();
    }
 }

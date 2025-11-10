@@ -1,18 +1,18 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class ControlPanel extends SDTPanel implements ActionListener
+public class ControlPanel extends SoTPanel implements ActionListener
 {
    private JButton newRoundB;
    private JButton clearAllB;
    private JButton saveB;
    private JButton loadB;
-   private SDTFrame parentFrame;
+   private SoTFrame parentFrame;
    
-   public ControlPanel(SDTFrame pf)
+   public ControlPanel(SoTFrame pf)
    {
       super();
       parentFrame = pf;

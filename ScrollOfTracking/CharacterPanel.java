@@ -1,10 +1,10 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CharacterPanel extends SDTPanel implements ActionListener, KeyListener
+public class CharacterPanel extends SoTPanel implements ActionListener, KeyListener
 {
    public static final double SMALL_ELEMENT_WIDTH = .05;
    public static final double MEDIUM_ELEMENT_WIDTH = SMALL_ELEMENT_WIDTH * 2;

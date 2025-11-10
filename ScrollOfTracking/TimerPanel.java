@@ -1,10 +1,10 @@
-package ShadowdarkTracker;
+package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class TimerPanel extends SDTPanel implements ActionListener
+public class TimerPanel extends SoTPanel implements ActionListener
 {
 	private int curTime;
 	private int maxTime;
@@ -16,7 +16,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
    private static final int BASE_RED = 0xFF;//0xFF;
    private static final int BASE_GREEN = 0xFF;//0xD7;
    private static final int BASE_BLUE = 0xFF;//0x00;
-   private SDTFrame parentFrame;
+   private SoTFrame parentFrame;
 
 
 	public int getCurTime(){return curTime;}
@@ -34,7 +34,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
 	public void setRunB(JButton r){runB = r;}
 	public void setResetB(JButton r){resetB = r;}
 
-   public TimerPanel(javax.swing.Timer t, SDTFrame parentF)
+   public TimerPanel(javax.swing.Timer t, SoTFrame parentF)
    {
       super();
       parentFrame = parentF;
