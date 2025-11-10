@@ -10,10 +10,14 @@ public abstract class SDTPanel extends JPanel implements ComponentListener
    public static final double TEXT_FONT_SCALE = .67;
    public static final double BUTTON_FONT_SCALE = .75;
    public static final String DELIMITER = "@@";
+   private Insets insets;
+   
+   public void setInsets(Insets i){insets = i;}
    
    public SDTPanel()
    {
       super();
+      insets = new Insets(2, 2, 2, 2);
       setLayout(null);
       addComponentListener(this);
    }
@@ -22,8 +26,8 @@ public abstract class SDTPanel extends JPanel implements ComponentListener
    {
       int width = this.getWidth();
       int height = this.getHeight();
-      c.setSize((int)(width * w), (int)(height * h));
-      c.setLocation((int)(width * x), (int)(height * y));
+      c.setSize((int)(width * w) - (insets.left + insets.right), (int)(height * h) - (insets.top + insets.bottom));
+      c.setLocation((int)(width * x) + insets.left, (int)(height * y) + insets.bottom);
       setFontSize(c);
    }
    

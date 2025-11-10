@@ -44,15 +44,5 @@ public class CharacterTitlePanel extends SDTPanel
       xInset += MEDIUM_ELEMENT_WIDTH;
       arrangeElement(actedL,        xInset, 0.0, MEDIUM_ELEMENT_WIDTH, 1.0);
    }
-   
-   @Override
-   public int calcFontSize(JComponent c)
-   {
-      int pixelSize = Math.min(c.getWidth(), c.getHeight());
-      if(c instanceof JButton)
-         pixelSize = (int)(pixelSize * (BUTTON_FONT_SCALE * .75));
-      else
-         pixelSize = (int)(pixelSize * (TEXT_FONT_SCALE * .75));
-      return pixelSize;
-   }
+
 }

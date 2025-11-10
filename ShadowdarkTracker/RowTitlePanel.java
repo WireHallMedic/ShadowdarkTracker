@@ -26,14 +26,4 @@ public class RowTitlePanel extends SDTPanel
       arrangeElement(conditionL, CHARACTER_PANEL_WIDTH, 0.0, 1.0 - CHARACTER_PANEL_WIDTH, 1.0);
    }
    
-   @Override
-   public int calcFontSize(JComponent c)
-   {
-      int pixelSize = Math.min(c.getWidth(), c.getHeight());
-      if(c instanceof JButton)
-         pixelSize = (int)(pixelSize * (BUTTON_FONT_SCALE * .75));
-      else
-         pixelSize = (int)(pixelSize * (TEXT_FONT_SCALE * .75));
-      return pixelSize;
-   }
 }

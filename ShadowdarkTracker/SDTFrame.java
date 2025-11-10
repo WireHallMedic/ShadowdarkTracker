@@ -10,15 +10,14 @@ public class SDTFrame extends JFrame implements ActionListener
    private RowPanel[] rowPanel;
    private SDTPanel controlPanel;
    private javax.swing.Timer timer;
-   
-   //public static final Insets insets = new Insets(2, 2, 2, 2);
+   public static final Insets INSETS = new Insets(2, 2, 2, 2);
    
    public static final int CHARACTER_PANELS = 13;
    
    public SDTFrame()
    {
       super();
-      setSize(1200, 800);
+      setSize(1400, 800);
       setTitle("ShadowdarkTracker");
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       
