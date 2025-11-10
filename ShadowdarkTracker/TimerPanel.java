@@ -37,7 +37,7 @@ public class TimerPanel extends SDTPanel implements ActionListener
    public TimerPanel(javax.swing.Timer t, SDTFrame parentF)
    {
       parentFrame = parentF;
-      maxTime = 60*60;
+      maxTime = 30;//60*60;
       runF = false;
       timeF = new JTextField("");
       timeF.setHorizontalAlignment(SwingConstants.CENTER);

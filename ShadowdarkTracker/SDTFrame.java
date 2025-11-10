@@ -33,10 +33,10 @@ public class SDTFrame extends JFrame implements ActionListener
       backgroundPanel.add(new RowTitlePanel());
       
       rowPanel = new RowPanel[CHARACTER_PANELS];
-      for(RowPanel curPanel : rowPanel)
+      for(int i = 0; i < CHARACTER_PANELS; i++)
       {
-         curPanel = new RowPanel();
-         backgroundPanel.add(curPanel);
+         rowPanel[i] = new RowPanel();
+         backgroundPanel.add(rowPanel[i]);
       }
       
       timer.start();
@@ -49,9 +49,16 @@ public class SDTFrame extends JFrame implements ActionListener
       if(backgroundPanel != null)
          backgroundPanel.setBackground(c);
       if(rowPanel != null)
+      {
          for(RowPanel curPanel : rowPanel)
+         {
             if(curPanel != null)
+            {
                curPanel.setBackground(c);
+               curPanel.repaint();
+            }
+         }
+      }
    }
    
    public void actionPerformed(ActionEvent ae)
