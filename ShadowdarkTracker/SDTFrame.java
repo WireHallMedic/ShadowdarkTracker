@@ -79,5 +79,6 @@ public class SDTFrame extends JFrame
       }
       if(controlPanel != null)
          controlPanel.setBackground(c);
+      repaint();
    }
 }

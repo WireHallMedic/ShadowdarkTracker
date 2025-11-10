@@ -93,10 +93,14 @@ public class TimerPanel extends SDTPanel implements ActionListener
    public void displayTime()
    {
       timeF.setText(getTimeString());
+      setColor();
+   }
+   
+   public void setColor()
+   {
       Color lightColor = getLightColor();
       setBackground(lightColor);
       parentFrame.setPanelBackgrounds(lightColor);
-      this.repaint();
    }
    
    // stay at 100% for first quarter, smoothly scale down to 25% over next three quarters, then drop to 0%
