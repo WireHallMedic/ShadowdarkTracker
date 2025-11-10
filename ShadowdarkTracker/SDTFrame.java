@@ -19,7 +19,7 @@ public class SDTFrame extends JFrame implements ActionListener
    {
       super();
       setSize(1400, 800);
-      setTitle("ShadowdarkTracker");
+      setTitle("SD Tracker");
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       
       timer = new javax.swing.Timer(1000, null);
