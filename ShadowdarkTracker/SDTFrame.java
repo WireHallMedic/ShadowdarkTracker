@@ -9,6 +9,7 @@ public class SDTFrame extends JFrame implements ActionListener
    private TimerPanel timerPanel;
    private RowPanel[] rowPanel;
    private SDTPanel controlPanel;
+   private JPanel backgroundPanel;
    private javax.swing.Timer timer;
    public static final Insets INSETS = new Insets(2, 2, 2, 2);
    
@@ -23,21 +24,33 @@ public class SDTFrame extends JFrame implements ActionListener
       
       timer = new javax.swing.Timer(1000, null);
       
-      setLayout(new GridLayout(CHARACTER_PANELS + 3, 1));
+      backgroundPanel = new JPanel();
+      add(backgroundPanel);
+      backgroundPanel.setLayout(new GridLayout(CHARACTER_PANELS + 3, 1));
       timerPanel = new TimerPanel(timer);
-      add(timerPanel);
+      backgroundPanel.add(timerPanel);
       
-      add(new RowTitlePanel());
+      backgroundPanel.add(new RowTitlePanel());
       
       rowPanel = new RowPanel[CHARACTER_PANELS];
       for(RowPanel curPanel : rowPanel)
       {
          curPanel = new RowPanel();
-         add(curPanel);
+         backgroundPanel.add(curPanel);
       }
       
       timer.start();
+      setPanelBackgrounds(Color.WHITE);
       setVisible(true);
+   }
+   
+   public void setPanelBackgrounds(Color c)
+   {
+      if(backgroundPanel != null)
+         backgroundPanel.setBackground(c);
+      for(RowPanel curPanel : rowPanel)
+         if(curPanel != null)
+            curPanel.setBackground(c);
    }
    
    public void actionPerformed(ActionEvent ae)

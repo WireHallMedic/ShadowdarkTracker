@@ -16,6 +16,7 @@ public class RowPanel extends SDTPanel
       characterPanel = new CharacterPanel(this);
       add(characterPanel);
       conditionF = new JTextField();
+      setBackground(Color.WHITE);
       add(conditionF);
    }
    
@@ -29,5 +30,13 @@ public class RowPanel extends SDTPanel
    {
       arrangeElement(characterPanel, 0.0, 0.0, CHARACTER_PANEL_WIDTH, 1.0);
       arrangeElement(conditionF, CHARACTER_PANEL_WIDTH, 0.0, 1.0 - CHARACTER_PANEL_WIDTH, 1.0);
+   }
+   
+   @Override
+   public void setBackground(Color c)
+   {
+      super.setBackground(c);
+      if(characterPanel != null)
+         characterPanel.setBackground(c);
    }
 }
