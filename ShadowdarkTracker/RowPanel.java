@@ -26,6 +26,11 @@ public class RowPanel extends SDTPanel
       conditionF.setText("");
    }
    
+   public void newRound()
+   {
+      characterPanel.newRound();
+   }
+   
    public void arrangeElements()
    {
       arrangeElement(characterPanel, 0.0, 0.0, CHARACTER_PANEL_WIDTH, 1.0);

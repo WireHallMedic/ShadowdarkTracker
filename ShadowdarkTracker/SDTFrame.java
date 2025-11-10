@@ -39,12 +39,28 @@ public class SDTFrame extends JFrame implements ActionListener
          backgroundPanel.add(rowPanel[i]);
       }
       
-      controlPanel = new ControlPanel();
+      controlPanel = new ControlPanel(this);
       backgroundPanel.add(controlPanel);
       
       timer.start();
       setPanelBackgrounds(Color.WHITE);
       setVisible(true);
+   }
+   
+   public void newRound()
+   {
+      for(int i = 0; i < CHARACTER_PANELS; i++)
+      {
+         rowPanel[i].newRound();
+      }
+   }
+   
+   public void clearAll()
+   {
+      for(int i = 0; i < CHARACTER_PANELS; i++)
+      {
+         rowPanel[i].clearAll();
+      }
    }
    
    public void setPanelBackgrounds(Color c)

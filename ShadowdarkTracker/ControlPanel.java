@@ -10,17 +10,23 @@ public class ControlPanel extends SDTPanel implements ActionListener
    private JButton clearAllB;
    private JButton saveB;
    private JButton loadB;
+   private SDTFrame parentFrame;
    
-   public ControlPanel()
+   public ControlPanel(SDTFrame pf)
    {
       super();
+      parentFrame = pf;
       newRoundB = new JButton("New Round");
+      newRoundB.addActionListener(this);
       add(newRoundB);
       clearAllB = new JButton("Clear All");
+      clearAllB.addActionListener(this);
       add(clearAllB);
       saveB = new JButton("Save");
+      saveB.addActionListener(this);
       add(saveB);
       loadB = new JButton("Load");
+      loadB.addActionListener(this);
       add(loadB);
    }
    
@@ -34,6 +40,13 @@ public class ControlPanel extends SDTPanel implements ActionListener
    
    public void actionPerformed(ActionEvent ae)
    {
-
+      if(ae.getSource() == clearAllB)
+      {
+         parentFrame.clearAll();
+      }
+      if(ae.getSource() == newRoundB)
+      {
+         parentFrame.newRound();
+      }
    }
 }
