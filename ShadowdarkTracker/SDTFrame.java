@@ -2,9 +2,8 @@ package ShadowdarkTracker;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
-public class SDTFrame extends JFrame implements ActionListener
+public class SDTFrame extends JFrame
 {
    private TimerPanel timerPanel;
    private RowPanel[] rowPanel;
@@ -78,10 +77,7 @@ public class SDTFrame extends JFrame implements ActionListener
             }
          }
       }
-   }
-   
-   public void actionPerformed(ActionEvent ae)
-   {
-   
+      if(controlPanel != null)
+         controlPanel.setBackground(c);
    }
 }
