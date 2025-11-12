@@ -89,7 +89,7 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
    public void keyTyped(KeyEvent ke){}
    public void keyReleased(KeyEvent ke)
    {
-      updateFatePointsField();
+      updateLuckPointsField();
    }
    
    public void clear()
@@ -106,7 +106,7 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
       hasActedCB.setSelected(false);
    }
    
-   public void updateFatePointsField()
+   public void updateLuckPointsField()
    {
       if(nameF.getText().equals(""))
       {
@@ -141,7 +141,7 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
    
    public void arrangeElements()
    {
-      updateFatePointsField();
+      updateLuckPointsField();
       double xInset = 0.0;
       double nameFWidth = 1.0 - ((SMALL_ELEMENT_WIDTH * 2) + (MEDIUM_ELEMENT_WIDTH * 3));
       arrangeElement(clearB,        0.0, 0.0, SMALL_ELEMENT_WIDTH, 1.0);
