@@ -124,7 +124,7 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
       String hasActed = "f";
       if(hasActedCB.isSelected())
          hasActed = "t";
-      return name + DELIMITER + luckPoints + DELIMITER + initF + DELIMITER + hasActed;
+      return name + DELIMITER + luckPoints + DELIMITER + initF.getText() + DELIMITER + hasActed;
    }
    
    public void deserialize(String str)

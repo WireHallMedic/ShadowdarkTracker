@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.*;
 
 public class SoTFrame extends JFrame
 {
@@ -96,7 +97,10 @@ public class SoTFrame extends JFrame
    
    public void load()
    {
-   
+      String[] strArr = read();
+      timerPanel.deserialize(strArr[0]);
+      for(int i = 0; i < CHARACTER_PANELS; i++)
+         rowPanel[i].deserialize(strArr[i + 1]);
    }
    
   public static void write(String[] output)
@@ -116,5 +120,34 @@ public class SoTFrame extends JFrame
 			outFile.println(line);
 			
 		outFile.close();
+	}
+   
+   public static String[] read()
+	{
+		Scanner inFile = null;
+      String[] output = new String[CHARACTER_PANELS + 1];
+		try
+		{
+			inFile = new Scanner(new FileReader(FILE_NAME));
+		}
+		catch(Exception ex)
+		{
+			String errorMessage = "Error: Cannot read from " + FILE_NAME;
+			JOptionPane.showMessageDialog(null, errorMessage, "Exception Occured", JOptionPane.ERROR_MESSAGE);
+         return output;
+		}
+		
+		try
+		{
+		   int index = 0;
+			while(inFile.hasNext() == true)
+			{
+				output[index] = inFile.nextLine();
+				index++;
+			}
+		}
+		catch(ArrayIndexOutOfBoundsException arrEx){}
+		inFile.close();
+		return output;
 	}
 }
