@@ -124,7 +124,7 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
       String hasActed = "f";
       if(hasActedCB.isSelected())
          hasActed = "t";
-      return name + DELIMITER + luckPoints + DELIMITER + hasActed;
+      return name + DELIMITER + luckPoints + DELIMITER + initF + DELIMITER + hasActed;
    }
    
    public void deserialize(String str)
@@ -132,7 +132,8 @@ public class CharacterPanel extends SoTPanel implements ActionListener, KeyListe
       String[] strArr = str.split(DELIMITER);
       nameF.setText(strArr[0]);
       luckPoints = Integer.parseInt(strArr[1]);
-      if(strArr[2].equals("t"))
+      initF.setText(strArr[2]);
+      if(strArr[3].equals("t"))
          hasActedCB.setSelected(true);
       else
          hasActedCB.setSelected(false);
