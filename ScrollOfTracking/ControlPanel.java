@@ -48,5 +48,13 @@ public class ControlPanel extends SoTPanel implements ActionListener
       {
          parentFrame.newRound();
       }
+      if(ae.getSource() == saveB)
+      {
+         parentFrame.save();
+      }
+      if(ae.getSource() == loadB)
+      {
+         parentFrame.load();
+      }
    }
 }

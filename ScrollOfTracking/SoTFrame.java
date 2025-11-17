@@ -2,6 +2,8 @@ package ScrollOfTracking;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 
 public class SoTFrame extends JFrame
 {
@@ -11,6 +13,7 @@ public class SoTFrame extends JFrame
    private ControlPanel controlPanel;
    private javax.swing.Timer timer;
    public static final Insets INSETS = new Insets(2, 2, 2, 2);
+   public static final String FILE_NAME = "SoT.dat";
    
    public static final int CHARACTER_PANELS = 13;
    
@@ -81,4 +84,37 @@ public class SoTFrame extends JFrame
          controlPanel.setBackground(c);
       repaint();
    }
+   
+   public void save()
+   {
+      String[] output = new String[CHARACTER_PANELS + 1];
+      output[0] = timerPanel.serialize();
+      for(int i = 0; i < CHARACTER_PANELS; i++)
+         output[i + 1] = rowPanel[i].serialize();
+      write(output);
+   }
+   
+   public void load()
+   {
+   
+   }
+   
+  public static void write(String[] output)
+	{
+		PrintWriter outFile = null;
+		try
+		{
+			outFile = new PrintWriter(FILE_NAME);
+		}
+		catch(Exception ex)
+		{
+			String errorMessage = "Error: Cannot write to " + FILE_NAME;
+			JOptionPane.showMessageDialog(null, errorMessage, "Exception Occured", JOptionPane.ERROR_MESSAGE);
+		}
+		
+		for(String line : output)
+			outFile.println(line);
+			
+		outFile.close();
+	}
 }
