@@ -146,7 +146,7 @@ public class TimerPanel extends SoTPanel implements ActionListener
    
    public String serialize()
    {
-      return "" + curTime;
+      return "" + getTimeInt();
    }
    
    public void deserialize(String str)
