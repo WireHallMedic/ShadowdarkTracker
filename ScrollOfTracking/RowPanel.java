@@ -44,4 +44,18 @@ public class RowPanel extends SoTPanel
       if(characterPanel != null)
          characterPanel.setBackground(c);
    }
+   
+   public String serialize()
+   {
+      String outStr = characterPanel.serialize();
+      outStr += DELIMITER + conditionF.getText();
+      return outStr;
+   }
+   
+   public void deserialize(String str)
+   {
+      characterPanel.deserialize(str);
+      String[] strList = str.split(DELIMITER);
+      conditionF.setText(strList[strList.length - 1]);
+   }
 }

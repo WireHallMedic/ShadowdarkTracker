@@ -143,4 +143,15 @@ public class TimerPanel extends SoTPanel implements ActionListener
       catch(Exception ex){}
       return maxTime;
    }
+   
+   public String serialize()
+   {
+      return "" + curTime;
+   }
+   
+   public void deserialize(String str)
+   {
+      curTime = Integer.parseInt(str);
+      displayTime();
+   }
 }
