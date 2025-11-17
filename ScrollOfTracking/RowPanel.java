@@ -48,7 +48,8 @@ public class RowPanel extends SoTPanel
    public String serialize()
    {
       String outStr = characterPanel.serialize();
-      outStr += DELIMITER + conditionF.getText();
+      // extra space so there's something after the delimiter for blank fields
+      outStr += DELIMITER + conditionF.getText() + " ";
       return outStr;
    }
    
@@ -56,6 +57,6 @@ public class RowPanel extends SoTPanel
    {
       characterPanel.deserialize(str);
       String[] strList = str.split(DELIMITER);
-      conditionF.setText(strList[strList.length - 1]);
+      conditionF.setText(strList[strList.length - 1].trim());
    }
 }
